@@ -58,6 +58,8 @@ Out-of-sample sensitivity to transaction costs:
 ![equity curve](figures/equity_curve.png)
 ![z-score example](figures/zscore_example.png)
 
+One pair (HDFCBANK/KOTAKBANK) passed selection at a 10% FDR. Out-of-sample net Sharpe was 1.00 over ~3.75 years (20 trades), versus 0.68 in-sample. With a single pair and a short window, the Sharpe estimate has wide uncertainty (roughly ±0.6), and the test period includes the HDFC merger, so this is evidence of a modest, plausible mean-reversion effect and not proof of a robust edge. Net Sharpe fell to 0.55 at 40 bps per side, so the result is cost-sensitive.
+
 ## Limitations
 - **Shorting:** Indian cash equities cannot be held short overnight. The backtest assumes the short leg is done via single-stock futures but ignores margin, lot sizes, rollover and futures basis. Returns are on gross notional, not on margin.
 - **Execution:** assumes fills at the close on the signal day, plus flat slippage. Real fills, liquidity and impact will differ. Cost levels should be checked against current broker, exchange and tax rates.
